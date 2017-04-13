@@ -25,7 +25,7 @@ public class FakeSoftBody : MonoBehaviour {
         scales = new Vector3[NumTailSegments];
         for (int i=0; i<NumTailSegments; i++)
         {
-            tailSegments[i] = GameObject.Instantiate(tailPrefab);
+            tailSegments[i] = GameObject.Instantiate(tailPrefab,transform.parent);
             float scaleDelta = 1 - TailMinScale;
             float scale = 1 - (i*i / (float)(NumTailSegments*NumTailSegments)) * scaleDelta;
             scales[i] = new Vector3(scale, scale, scale);
